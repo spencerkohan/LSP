@@ -31,8 +31,8 @@ Follow installation instructions on [LSP-cmake](https://github.com/sublimelsp/LS
 
 ## Clojure
 
-1. Download [clojure-lsp](https://github.com/snoe/clojure-lsp).
-2. Add the `"clojure-lsp"` configuration to the `LSP.sublime-settings` file:
+1. Download [clojure-lsp](https://github.com/snoe/clojure-lsp#installation).
+2. Add the `"clojure-lsp"` client configuration to the `LSP.sublime-settings` file:
 
 ```json
 {
