@@ -2,15 +2,12 @@
 
 Follow the setup steps for a language server to get it up and running.
 
-If you encounter problems, see the [common issues](/setup/common_issues/) page or search the [LSP/issues](https://github.com/sublimelsp/LSP/issues) before opening new ones.
+If you encounter problems see the [common issues](/setup/common_issues/) page or search the [LSP/issues](https://github.com/sublimelsp/LSP/issues) before opening new ones.
 
 If there are no setup steps for a language server on this page, but a [language server implementation](https://microsoft.github.io/language-server-protocol/implementors/servers/) exist, follow the guide for [creating a client configuration](/setup/client_configuration/).
 
 !!! tip
     We recommend installing [LSP-json](https://packagecontrol.io/packages/LSP-json), as it suggest smart settings completions and report errors when inside the `LSP.sublime-settings` file.
-
-
-
 
 ## Angular
 
@@ -43,13 +40,16 @@ Follow installation instructions on [LSP-cmake](https://github.com/sublimelsp/LS
         "clojure-lsp": {
             "enabled": true,
             "command": ["java", "-jar", "/PATH/TO/clojure-lsp"],
-            "initializationOptions": {}, // see all available options https://github.com/snoe/clojure-lsp#initializationoptions
+            "initializationOptions": {},
             "selector": "source.clojure"
         }
     }
 }
 ```
 3. Update the `/PATH/TO/clojure-lsp`.
+
+!!! info ""
+    See all available [initializationOptions](https://github.com/snoe/clojure-lsp#initializationoptions).
 
 ## CSS
 
