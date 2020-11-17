@@ -1,5 +1,7 @@
 site_name: LSP Docs
 repo_url: https://github.com/sublimelsp/LSP/
+edit_uri: edit/st4000-exploration/docs/
+
 theme:
   name: material
   palette:
