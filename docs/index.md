@@ -2,6 +2,7 @@
 
 !!! note ""
     This guide is for LSP for Sublime Text 4. If you use LSP for Sublime Text 3 visit this [documentation](https://lsp.readthedocs.io/en/latest/).
+
 ## Introduction
 
 LSP for Sublime Text implements the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) and it provides features like auto complete, go to definition, find all references etc.

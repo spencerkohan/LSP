@@ -4,8 +4,8 @@ theme:
   name: material
   palette:
       scheme: slate
-      accent:  deep orange
-      primary: deep orange
+      accent: orange
+      primary: orange
 
 # override css
 extra_css:
