@@ -57,7 +57,21 @@ Follow installation instructions on [LSP-css](https://github.com/sublimelsp/LSP-
 
 ## D
 
-TODO add setup steps
+1. Install the [D Language Server](https://github.com/d-language-server/dls#installation).
+2. Add the `"dls"` client configuration to the `LSP.sublime-settings` file:
+
+```json
+{
+    "clients": {
+        "dls": {
+            "enabled": true,
+            "command": ["/PATH/TO/DLS_EXECUTABLE"],
+            "selector": "source.d"
+        }
+    }
+}
+```
+3. Update the `/PATH/TO/DLS_EXECUTABLE`.
 
 ## Dart
 
