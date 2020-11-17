@@ -91,7 +91,21 @@ Follow installation instructions on [LSP-elm](https://github.com/sublimelsp/LSP-
 
 ## Erlang
 
-TODO add setup steps
+1. Install the [Erlang Language Server](https://github.com/erlang-ls/erlang_ls).
+2. Add the `"erlang-ls"` client configuration to the `LSP.sublime-settings` file:
+
+```json
+{
+    "clients": {
+        "erlang-ls": {
+            "enabled": true,
+            "command": [ "/PATH/TO/erlang_ls", "--transport", "stdio" ],
+            "selector": "source.erlang"
+        }
+    }
+}
+```
+3. Update the `/PATH/TO/erlang_ls`.
 
 ## ESLint
 
@@ -103,7 +117,22 @@ Follow installation instructions on [LSP-flow](https://github.com/sublimelsp/LSP
 
 ## Fortran
 
-TODO add setup steps
+1. Install the [ Fortran](https://packagecontrol.io/packages/Fortran) package from Package Control for syntax highlighting.
+2. Install the [Fortran Language Server](https://github.com/hansec/fortran-language-server#installation).
+3. Add the `"fortls"` client configuration to the `LSP.sublime-settings` file:
+
+```json
+{
+    "clients": {
+        "fortls": {
+            "enabled": true,
+            "command": ["fortls"],
+            "selector": "source.modern-fortran | source.fixedform-fortran"
+        }
+    }
+}
+```
+4. Update the `/PATH/TO/erlang_ls`.
 
 ## GO
 
@@ -144,7 +173,7 @@ Follow installation instructions on [LSP-TexLab](https://github.com/sublimelsp/L
 ## Lisp
 
 1. Install [cc-lsp](https://github.com/cxxxr/cl-lsp) using Roswell.
-2. Add the `"cc-lsp"` configuration to the `LSP.sublime-settings` file:
+2. Add the `"cc-lsp"` client configuration to the `LSP.sublime-settings` file:
 
 ```json
 {
