@@ -137,7 +137,7 @@ Follow installation instructions on [LSP-flow](https://github.com/sublimelsp/LSP
 
 ## GO
 
-1. Install the [gopls](https://github.com/golang/tools/blob/master/gopls/doc/user.md#installation).
+1. Install [gopls](https://github.com/golang/tools/blob/master/gopls/doc/user.md#installation).
 2. Add the `"gopls"` client configuration to the `LSP.sublime-settings` file:
 
 ```json
