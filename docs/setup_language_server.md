@@ -48,8 +48,7 @@ Follow installation instructions on [LSP-cmake](https://github.com/sublimelsp/LS
 ```
 3. Update the `/PATH/TO/clojure-lsp`.
 
-!!! info ""
-    See all available [initializationOptions](https://github.com/snoe/clojure-lsp#initializationoptions).
+!!! info "See all available [initializationOptions](https://github.com/snoe/clojure-lsp#initializationoptions)."
 
 ## CSS
 
@@ -132,11 +131,28 @@ Follow installation instructions on [LSP-flow](https://github.com/sublimelsp/LSP
     }
 }
 ```
-4. Update the `/PATH/TO/erlang_ls`.
+
+!!! info "See the [available configuration options](https://github.com/hansec/fortran-language-server#language-server-settings), for example `"command": ["fortls", "--lowercase_intrinsics"]` to use lowercase for autocomplete suggestions."
 
 ## GO
 
-TODO add setup steps
+1. Install the [gopls](https://github.com/golang/tools/blob/master/gopls/doc/user.md#installation).
+2. Add the `"gopls"` client configuration to the `LSP.sublime-settings` file:
+
+```json
+{
+    "clients": {
+        "gopls": {
+            "enabled": true,
+            "command": ["gopls"],
+            "selector": "source.go"
+        }
+    }
+}
+```
+
+!!! info "Visit [gopls repo](https://github.com/golang/tools/tree/master/gopls) for more info."
+
 
 ## GraphQL
 
