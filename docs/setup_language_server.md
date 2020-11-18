@@ -48,7 +48,7 @@ Follow installation instructions on [LSP-cmake](https://github.com/sublimelsp/LS
 ```
 3. Update the `/PATH/TO/clojure-lsp`.
 
-!!! info "See all available [initializationOptions](https://github.com/snoe/clojure-lsp#initializationoptions)."
+!!! info "See available [initializationOptions](https://github.com/snoe/clojure-lsp#initializationoptions)."
 
 ## CSS
 
@@ -132,7 +132,8 @@ Follow installation instructions on [LSP-flow](https://github.com/sublimelsp/LSP
 }
 ```
 
-!!! info "See the [available configuration options](https://github.com/hansec/fortran-language-server#language-server-settings), for example `"command": ["fortls", "--lowercase_intrinsics"]` to use lowercase for autocomplete suggestions."
+!!! info "See available [configuration options](https://github.com/hansec/fortran-language-server#language-server-settings)."
+    For example set `"command": ["fortls", "--lowercase_intrinsics"]` to use lowercase for autocomplete suggestions.
 
 ## GO
 
