@@ -57,7 +57,7 @@ def start_server(
         cwd=working_dir,
         env=env,
         startupinfo=si)
-
+    
     attach_logger(process, process.stderr, on_stderr_log)
 
     # if on_stderr_log is not None:

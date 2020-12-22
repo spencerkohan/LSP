@@ -194,7 +194,7 @@ class StdioTransport(Transport):
 
     def _checked_stdout(self) -> 'IO[Any]':
         if self.process:
-            return self.process.stdout
+            return self.process.stdout  # type: ignore
         else:
             raise UnexpectedProcessExitError()
 
@@ -283,10 +283,10 @@ class StdioTransport(Transport):
                     debug(message)
                     msgbytes = bytes(message, 'UTF-8')
                     try:
-                        self.process.stdin.write(msgbytes)
+                        self.process.stdin.write(msgbytes)  # type: ignore
                     except AttributeError:
                         return
-                    self.process.stdin.flush()
+                    self.process.stdin.flush()  # type: ignore
                 except (BrokenPipeError, OSError) as err:
                     exception_log("Failure writing to stdout", err)
                     self.close()

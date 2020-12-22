@@ -1,4 +1,4 @@
-from .. import __version__
+from .version import __version__
 from .logging import debug
 from .process import start_server
 from .protocol import completion_item_kinds, symbol_kinds, WorkspaceFolder, Request, Notification
@@ -119,6 +119,11 @@ def get_initialize_params(workspace_folders: List[WorkspaceFolder], config: Clie
             "configuration": True
         },
         "window": {
+            "showMessage": {
+                "messageActionItem": {
+                    "additionalPropertiesSupport": True
+                }
+            },
             "workDoneProgress": True
         }
     }
