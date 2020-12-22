@@ -441,8 +441,12 @@ def create_session(config: ClientConfig,
             on_post_initialize=on_post_initialize,
             on_post_exit=on_post_exit)
 
+    debug(">>> CREATING SESSION")
+    debug("{}".format(config.tcp_port))
+
     session = None
     if config.binary_args:
+        debug(">>> Binary args: {}".format(config.binary_args))
         tcp_port = config.tcp_port
         server_args = config.binary_args
 
@@ -472,6 +476,7 @@ def create_session(config: ClientConfig,
                 session = with_client(attach_stdio_client(process, settings))
     else:
         if config.tcp_port:
+            debug(">>> TCP port: {}".format(config.tcp_port))
             transport = start_tcp_transport(config.tcp_port)
             session = with_client(Client(transport, settings))
         elif bootstrap_client:

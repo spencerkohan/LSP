@@ -108,6 +108,7 @@ class TCPTransport(Transport):
         self.socket = None
         self.on_closed()
 
+
     def read_socket(self) -> None:
         remaining_data = b""
         is_incomplete = False
@@ -183,6 +184,8 @@ class StdioTransport(Transport):
         self.write_thread.start()
         self.read_thread = threading.Thread(target=self.read_stdout)
         self.read_thread.start()
+        # self.read_sterr_thread = threading.Thread(target=self.read_sterr)
+        # self.read_sterr_thread.start()
 
     def close(self) -> None:
         self.process = None
@@ -195,6 +198,12 @@ class StdioTransport(Transport):
         else:
             raise UnexpectedProcessExitError()
 
+    # def _checked_stderr(self) -> 'IO[Any]':
+    #     if self.process:
+    #         return self.process.stderr
+    #     else:
+    #         raise UnexpectedProcessExitError()
+
     def read_stdout(self) -> None:
         """
         Reads JSON responses from process and dispatch them to response_handler
@@ -204,16 +213,28 @@ class StdioTransport(Transport):
         state = STATE_HEADERS
         content_length = 0
         while running and self.process and state != STATE_EOF:
+            debug("polling...\n")
             running = self.process.poll() is None
             try:
+                # stderr_output = self._checked_stderr().readline()
+                # while stderr_output:
+                #     debug("SERVER: {}".format(stderr_output))
+                #     stderr_output = self._checked_stderr().readline()
+
                 # debug("read_stdout: state = {}".format(state_to_string(state)))
                 if state == STATE_HEADERS:
                     header = self._checked_stdout().readline()
-                    # debug('read_stdout reads: {}'.format(header))
+                    debug('read_stdout reads: {}'.format(header))
+                    # if not header and not stderr_output:
                     if not header:
                         # Truly, this is the EOF on the stream
+                        debug("no header, STATE_EOF")
                         state = STATE_EOF
                         break
+
+                    # if not header:
+                    #     debug("no header, continuing...")
+                    #     continue
 
                     header = header.strip()
                     if not header:
@@ -258,6 +279,8 @@ class StdioTransport(Transport):
                 break
             else:
                 try:
+                    debug("writing to stdin:")
+                    debug(message)
                     msgbytes = bytes(message, 'UTF-8')
                     try:
                         self.process.stdin.write(msgbytes)
